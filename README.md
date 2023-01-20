@@ -1,15 +1,26 @@
-# SAPER
+# SAPER - Sentiment Analysis to Predict Election Results
 Sentiment analysis, also known as opinion mining, is a type of natural language processing (NLP) that involves evaluating the sentiment or emotion behind a piece of text. In this paper, the authors apply sentiment analysis to public opinions of candidates on Twitter.
+
+## Dependencies
+- textblob
+- twython
+- tkinter
+- PIL
+- os
+- pandas
+- warnings
 
 ## Process 
 
 1. In order to use the Twitter API, you must have a developer account and create a new app to get your API keys(app_key, app_secret, oauth_token, oauth_token_secret).
-2. Once you have your API keys, you can use the Twython library to connect to the Twitter API and search for tweets using a specific keyword or hashtag(for example `JSP`,`TDP`,`YSRCP`) through `t.search(q=q,count=200)`.
+2. Once you have your API keys, you can use the Twython library to connect to the Twitter API and search for tweets using a specific keyword or hashtag(for example `JSP`,`TDP`,`YSRCP`) through `t.search(q=q,count=1000)`.
 3. The returned tweets are then preprocessed and cleaned to remove unnecessary information and special characters.
 4. The TextBlob library is then used to perform sentiment analysis on the tweets using `analysis = TextBlob(tweet)` and `.sentiment.polarity`.
 5. Based on the polarity of the sentiment, the tweets are classified as positive, negative or neutral.
-6. The script returns a Dataframe containing the tweets and their corresponding sentiment scores.
+6. The script uses the pandas library to create a Dataframe containing the tweets and their corresponding sentiment scores.
 7. The script also returns the percentage of tweets which are positive, negative and neutral.
+8. The script uses the PIL and tkinter libraries to create a GUI that displays the sentiment analysis plots as images. 
+9. On clicking the images, it will show the name of the image.
 
 ## Note
 - Some additional preprocessing and data cleaning can be done before running the analysis on tweets.
